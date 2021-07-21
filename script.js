@@ -4,6 +4,8 @@ const submitButton = document.querySelector('#submitButton');
 const selectHouse = document.querySelector('#house');
 const checkBox = document.querySelector('#agreement');
 const formSubmitButton = document.querySelector('#submit-btn');
+const textareaPath = document.querySelector('#textarea');
+const counterPath = document.querySelector('#counter');
 
 submitButton.addEventListener('click', () => {
   if (inputLogin.value !== 'tryber@teste.com' || inputPassword.value !== '123456') {
@@ -30,4 +32,10 @@ checkBox.addEventListener('change', () => {
   } else {
     formSubmitButton.disabled = true;
   }
+});
+
+textareaPath.addEventListener('keyup', () => {
+  const textareaString = textareaPath.value;
+  const counterUpdated = 500 - parseInt(textareaString.length, 10);
+  counterPath.innerText = counterUpdated;
 });
