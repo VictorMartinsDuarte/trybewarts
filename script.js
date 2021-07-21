@@ -2,6 +2,8 @@ const inputLogin = document.querySelector('#inputLogin');
 const inputPassword = document.querySelector('#inputPassword');
 const submitButton = document.querySelector('#submitButton');
 const selectHouse = document.querySelector('#house');
+const checkBox = document.querySelector('#agreement');
+const formSubmitButton = document.querySelector('#submit-btn');
 
 submitButton.addEventListener('click', () => {
   if (inputLogin.value !== 'tryber@teste.com' || inputPassword.value !== '123456') {
@@ -21,3 +23,11 @@ function houseOptions() {
     houseOption.id = housesId[index];
   }
 } houseOptions();
+
+checkBox.addEventListener('change', () => {
+  if (checkBox.checked) {
+    formSubmitButton.disabled = false;
+  } else {
+    formSubmitButton.disabled = true;
+  }
+});
